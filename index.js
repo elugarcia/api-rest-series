@@ -3,6 +3,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
+var path = require('path');
+
 mongoose.set('strictQuery', false);
 
 // Connection to DB
@@ -28,6 +30,7 @@ app.use(router);
 router.get('/', function (req, res) {
   res.send('Hello World!');
 });
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API routes
 var tvshows = express.Router();
