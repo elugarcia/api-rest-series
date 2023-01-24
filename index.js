@@ -23,16 +23,11 @@ var TVShowCtrl = require('./controllers/tvshows');
 
 var router = express.Router();
 
-// Middlewares
-const { errorHandler, unknownEndpoint } = require('./middlewares/middlewares');
-// app.use(unknownEndpoint);
-// app.use(errorHandler);
-
+app.use(router);
 // Main Route
 router.get('/', function (req, res) {
   res.send('Hello World!');
 });
-app.use(router);
 
 // API routes
 var tvshows = express.Router();
