@@ -28,9 +28,9 @@ var router = express.Router();
 app.use(router);
 // Main Route
 router.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.sendFile('index.html', { root: path.join(__dirname, 'public') });
 });
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API routes
 var tvshows = express.Router();
