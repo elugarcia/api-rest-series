@@ -5,10 +5,14 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var path = require('path');
 
+const MongoClient = require('mongodb').MongoClient;
+
 mongoose.set('strictQuery', false);
 
+const url = `mongodb+srv://mongoatlasusername:mongoatlasusername@cluster0.iodba7k.mongodb.net/?retryWrites=true&w=majority`;
+
 // Connection to DB
-mongoose.connect('mongodb://localhost/tvshows', function (err, res) {
+mongoose.connect(url, function (err, res) {
   if (err) throw err;
   console.log('Connected to Database');
 });
