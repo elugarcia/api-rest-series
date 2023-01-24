@@ -30,7 +30,7 @@ app.use(router);
 router.get('/', function (req, res) {
   res.send('Hello World!');
 });
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // API routes
 var tvshows = express.Router();
